@@ -1,6 +1,5 @@
 t = int(input())
-
-for _ in range(t):
+for _ in range(t): 
     w = input()
     if len(w) > 10:
         print(f"{w[0]}{len(w)-2}{w[-1]}")
