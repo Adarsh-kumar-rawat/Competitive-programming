@@ -62,11 +62,17 @@ for _ in range(t):
         else:
             equal +=1
 
-    if less > more :
-        print(a-1)
-    elif less < more:
-        print(a+1)
-    else:
+    if equal == len(v):
         print(a)
-
-
+    else:
+        m = max(less,more,equal)
+        if m== less:
+            print(a-1)
+        elif m == more:
+            print(a+1)
+        else:
+            x = max(less,more)
+            if x == less:
+                print(a-1)
+            else:
+                print(a+1)
