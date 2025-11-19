@@ -4,25 +4,37 @@ for _ in range(t):
     s = input()
     n = len(s)
 
-    flag = ('*' in s)
+    i = 0
+    j = 1
+    bad = False
 
-    if flag:
-        if n == 1:
-            print(1)
-        else:
+    while j < n:
+        if (s[i] == '>' and s[j] == '<') or \
+           (s[i] == '>' and s[j] == '*') or \
+           (s[i] == '*' and s[j] == '<'):
             print(-1)
+            bad = True
+            break
+        else:
+            i += 1
+            j += 1
+
+    if bad:
+        continue  
+
+    c1 = 0
+    c2 = 0
+    c3 = 0
+
+    for ch in s:
+        if ch == '<':
+            c1 += 1
+        elif ch == '>':
+            c3 += 1
+        else:
+            c2 += 1
+
+    if c2 >= 2:
+        print(-1)
     else:
-        if s[0] == '>' and s[-1] == '<':
-            print(-1)
-        else:
-            countleft = 0
-            while countleft < n and s[countleft] == '<' or s[countleft] =="*":
-
-                countleft += 1
-
-            countright = 0
-            while countright < n and s[n - 1 - countright] == '>' or s[countleft] =="*":
-                countright += 1
-
-            print(max(countleft, countright))
-
+        print(max(c1 + c2, c2 + c3))
