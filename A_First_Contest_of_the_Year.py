@@ -13,15 +13,18 @@ MOD = 10**9 + 7
 #
 
 def solve():
-    n = int(input())
-    arr = list(map(int, input().split()))
 
-    ans = 0
+    x, y = map( int , input().split())
+
+    while y <= x:
+        y += 7 
+
+    ans = y - x
 
     print(ans)
 
 def main():
-    t = int(input())
+    t = 1
     for _ in range(t):
         solve()
 

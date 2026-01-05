@@ -13,15 +13,28 @@ MOD = 10**9 + 7
 #
 
 def solve():
-    n = int(input())
-    arr = list(map(int, input().split()))
 
-    ans = 0
+    n , m = map(int,input().split())
+    t = input()
+    s = input()
 
-    print(ans)
+    if s in t:
+        print(0)
+        return 
+    
+
+    t = list(t)
+    s = list(s)
+
+    ans = 0 
+    mn = float("-inf")
+
+    for i in range(n,m):
+        
+
 
 def main():
-    t = int(input())
+    t = 1
     for _ in range(t):
         solve()
 

@@ -13,12 +13,19 @@ MOD = 10**9 + 7
 #
 
 def solve():
-    n = int(input())
-    arr = list(map(int, input().split()))
+    s = input()
+    ans = 0 
 
-    ans = 0
+    for ch in s:
+        if ch == "Y":
+            ans +=1 
+    
+    if ans > 1:
+        print("NO")
+    else:
+        print("YES")
 
-    print(ans)
+    #print(ans)
 
 def main():
     t = int(input())
